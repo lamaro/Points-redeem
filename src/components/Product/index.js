@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 import { redeemProductThunk } from '../../store'
 
 
-const Product = ({ name, img, category, onRedeemProduct, _id }) => {
+const Product = ({ name, img, category, onRedeemProduct, _id, cost }) => {
     const handleRedeemProduct = productId => onRedeemProduct(productId)
     return(
         <Container onClick={() => handleRedeemProduct(_id)}>
         <img src={img.url} alt={name} />
         <div className="product-info">
             <p>{category}</p>
-            <h4>{name}</h4>
+            <h4>{name} - ${cost}</h4>
         </div>
         </Container>
     )

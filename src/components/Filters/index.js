@@ -17,10 +17,10 @@ const Filters = ({products, onGetProductsFiltered}) => {
           productsFiltered = products
         break;
       case 'Lowest price':
-          productsFiltered = products.sort((a, b) => (a.cost > b.cost) ? 1 : -1)
+          productsFiltered = products.sort((a, b) => (a.cost > b.cost) ? 1 : -1).slice()
         break;
       case 'Highest price':
-          productsFiltered = products.sort((a, b) => (a.cost < b.cost) ? 1 : -1)
+          productsFiltered = products.sort((a, b) => (a.cost < b.cost) ? 1 : -1).slice()
         break;
         
       default:
