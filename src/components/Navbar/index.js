@@ -10,7 +10,9 @@ const Navbar = ({user, onGetUser}) => {
       }, [onGetUser])
     return(
         <Container>
+            <a href="/">
             <img src={require('../../assets/aerolab-logo.svg')} alt="Aerolab" />
+            </a>
             {user && (
                 <div className="user-info">
                 <h3>{user.name}</h3>

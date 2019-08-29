@@ -1,25 +1,30 @@
 import React from 'react'
 import { Container } from './styled'
 import { connect } from 'react-redux'
-import { redeemProductThunk } from '../../store'
+import {Link} from 'react-router-dom';
 
 
-const Product = ({ name, img, category, onRedeemProduct, _id, cost }) => {
-    const handleRedeemProduct = productId => onRedeemProduct(productId)
+const Product = ({ name, img, category, _id, cost, user }) => {
     return(
-        <Container onClick={() => handleRedeemProduct(_id)}>
+        <Container>
         <img src={img.url} alt={name} />
+        <div className="price">Cost: {cost}</div>
         <div className="product-info">
             <p>{category}</p>
-            <h4>{name} - ${cost}</h4>
+            <h4>{name}</h4>
+        </div>
+        <div className="over-info">
+            <h4>{name}</h4>
+            <h4>{user ? user.points : 0}</h4>
+            <h5>Cost: {cost}</h5>
+            {user && user.points > cost ? <Link to={`/product/${_id}`}>Redeem Now!</Link> : 'NO WAY'}
         </div>
         </Container>
     )
 }
 
-const mapDispatchToProps = dispatch =>({
-    onRedeemProduct: productId => dispatch(redeemProductThunk(productId))
-})
+const mapStateToProps = state => ({
+    user: state.user
+  })
 
-
-export default connect(null,mapDispatchToProps)(Product)
+export default connect(mapStateToProps,null)(Product)

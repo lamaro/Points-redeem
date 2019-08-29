@@ -8,13 +8,12 @@ const filters = [{ text: 'Most recent' }, { text: 'Lowest price' }, { text: 'Hig
 
 const Filters = ({products, onGetProductsFiltered}) => {
   const [activeButton, setActiveButton] = useState(filters[0].text)
-
   const handleButtonClick = buttonName => {
     setActiveButton(buttonName)
     let productsFiltered = []
     switch (buttonName) {
       case 'Most recent':
-          productsFiltered = products
+          productsFiltered = products.sort((a, b) => (a._id > b._id) ? 1 : -1).slice()
         break;
       case 'Lowest price':
           productsFiltered = products.sort((a, b) => (a.cost > b.cost) ? 1 : -1).slice()
@@ -27,7 +26,6 @@ const Filters = ({products, onGetProductsFiltered}) => {
           productsFiltered = products
         break;
     }
-    
     onGetProductsFiltered(productsFiltered)
   }
 
@@ -47,7 +45,7 @@ const Filters = ({products, onGetProductsFiltered}) => {
           ))}
         </div>
       </div>
-      <div className="total-products">16 of 32 products</div>
+      <div className="total-products">{products.length > 0 && `${products.length} products`}</div>
     </Container>
   )
 }

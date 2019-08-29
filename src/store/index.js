@@ -47,7 +47,7 @@ const getUser = payload => ({ type: GET_USER, payload })
 const getProductsThunk = () => {
   return async dispatch => {
     const products = await api.getProducts()
-    console.log(products)
+    localStorage.setItem('productsObj', JSON.stringify(products));
     dispatch(getProducts(products))
   }
 }
