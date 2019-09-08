@@ -14,17 +14,15 @@ const Container = styled.div`
     display: flex;
     align-items: center;
 
-    .total-products {
-      color: #616161;
-      margin-right: 49px;
-    }
-
     .sort-by {
       color: #a3a3a3;
       span {
         margin-right: 24px;
       }
     }
+  }
+  .total-products {
+    color: #a3a3a3;
   }
 `
 

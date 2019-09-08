@@ -6,7 +6,8 @@ const Container = styled.footer`
     align-items: center;
     justify-content: space-between;
     padding: 0 42px;
-    background-color: black;
+    background-color: #26547C;
+    color: #fff;
 `
 
 export { Container }
