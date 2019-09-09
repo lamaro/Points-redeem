@@ -17,7 +17,7 @@
 - styled-components
 
 
-## Available Scripts
+### Available Scripts
 
 To test in dev use "npm run dev"
 
