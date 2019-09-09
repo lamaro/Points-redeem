@@ -5,6 +5,7 @@ import { getUserThunk } from '../../store'
 import UserPoints from '../UserPoints'
 import ProductHistory from '../ProductHistory'
 import Button from '../Button'
+import Loading from '../Loading'
 
 const Navbar = ({user,loading, onGetUser}) => {
 
@@ -17,6 +18,7 @@ const Navbar = ({user,loading, onGetUser}) => {
             <a href="/">
             <img src={require('../../assets/aerolab-logo.svg')} alt="Aerolab" />
             </a>
+            {!user && <Loading active={true} />}
             {user && (
               <div>
                 <div className="user-info">
@@ -37,6 +39,7 @@ const Navbar = ({user,loading, onGetUser}) => {
                 )}
               </div>
             )}
+
         </Container>
     )
 }

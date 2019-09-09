@@ -10,6 +10,7 @@ const Container = styled.nav`
   justify-content: space-between;
   padding: 0 42px;
   background-color: #26547C;
+  img{width:40px;}
 
   .user-info {
     display: flex;
