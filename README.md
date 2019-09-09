@@ -21,7 +21,7 @@
 
 To test in dev use "npm run dev"
 
-### Uploaded in heroku
+### Deployed to Heroku
 
 https://pointsredeem.herokuapp.com/
 
