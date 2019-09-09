@@ -1,7 +1,7 @@
 # Points redeem
 
 - Aerolab challenge
-- Final project for Acamica React frontend developer course.
+- Final project for Acamica React frontend developer course. (Sept 2019)
 
 ## Technologies and NPM Packages
 
